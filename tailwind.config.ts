@@ -7,22 +7,30 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    maxWidth: {
+      xl: '512px',
+    },
     fontSize: {
-      sm: '0.8rem',
-      base: '1rem',
-      xl: '1.25rem',
-      '2xl': '1.563rem',
-      '3xl': '1.953rem',
-      '4xl': '2.441rem',
-      '5xl': '3.052rem',
-      '6xl': '3.815rem',
-      '7xl': '4.768rem', 
-      '8xl': '7rem'
+      sm: '1vw',      // Tamanho pequeno
+      base: '2vw',    // Tamanho base
+      // xl: '3vw',      // Extra grande
+      '2xl': '4vw',   // 2x Extra grande
+      '3xl': '5vw',   // 3x Extra grande
+      '4xl': '6vw',   // 4x Extra grande
+      '5xl': '7vw',   // 5x Extra grande
+      '6xl': '8vw',   // 6x Extra grande
+      '7xl': '9vw',   // 7x Extra grande
+      '8xl': '10vw', 
     },
     extend: {
       colors : {
         'landing' : "#0a0e31",
-        'FontColor' : '#b9b2ff'
+        'FontColor' : '#b9b2ff',
+        'ColorSmalText' : '#818596',
+        'ButtonColor' : '#8b7fff',
+        'FontColorAuth' : '#E9F6FF',
+        'Warning' : '#C1EDD5',
+        'FormMessage' : '#A6ADBA'
       }
     },
   },
