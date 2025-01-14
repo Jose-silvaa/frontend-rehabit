@@ -8,7 +8,7 @@ const HeroSection = () => {
           <h1 className="text-5xl font-bold tracking-tight text-landing sm:text-6xl">Create and Sustain Positive Habits</h1>
           <p className="mt-6 text-lg leading-8 text-600 max-w-2xl mx-auto">Track and build personalized habits for lasting transformation.</p>
           <nav className="flex flex-col md:flex-row gap-4 mt-6 justify-center">
-            <Link href="">
+            <Link href="/login">
                 <button className="bg-landing text-white px-4 py-2 rounded w-full md:w-64">
                     I HAVE AN ACCOUNT
                 </button>
