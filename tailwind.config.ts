@@ -27,10 +27,11 @@ export default {
         'landing' : "#0a0e31",
         'FontColor' : '#b9b2ff',
         'ColorSmalText' : '#818596',
-        'ButtonColor' : '#8b7fff',
+        'ButtonColor' : '#8B7FFF',
         'FontColorAuth' : '#E9F6FF',
         'Warning' : '#C1EDD5',
-        'FormMessage' : '#A6ADBA'
+        'FormMessage' : '#A6ADBA',
+        'LinkColor' : '#1F276F'
       }
     },
   },

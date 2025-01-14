@@ -11,7 +11,7 @@ const Header = ()=>{
                             <span className="font-extrabold text-lg">Rehabit</span>
                         </Link>
                     </div>
-                    <div className="flex lg:hidden">
+                    <div className="flex">
                         <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
                             <span className="sr-only">Open main menu</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-base-content">
