@@ -18,7 +18,7 @@ export default {
       '3xl': '5vw',   // 3x Extra grande
       '4xl': '6vw',   // 4x Extra grande
       '5xl': '7vw',   // 5x Extra grande
-      '6xl': '8vw',   // 6x Extra grande
+      '6xl': '3.75rem',   // 6x Extra grande
       '7xl': '9vw',   // 7x Extra grande
       '8xl': '10vw', 
     },
@@ -27,10 +27,11 @@ export default {
         'landing' : "#0a0e31",
         'FontColor' : '#b9b2ff',
         'ColorSmalText' : '#818596',
-        'ButtonColor' : '#8b7fff',
+        'ButtonColor' : '#8B7FFF',
         'FontColorAuth' : '#E9F6FF',
         'Warning' : '#C1EDD5',
-        'FormMessage' : '#A6ADBA'
+        'FormMessage' : '#A6ADBA',
+        'LinkColor' : '#1F276F'
       }
     },
   },
