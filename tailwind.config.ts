@@ -18,7 +18,7 @@ export default {
       '3xl': '5vw',   // 3x Extra grande
       '4xl': '6vw',   // 4x Extra grande
       '5xl': '7vw',   // 5x Extra grande
-      '6xl': '8vw',   // 6x Extra grande
+      '6xl': '3.75rem',   // 6x Extra grande
       '7xl': '9vw',   // 7x Extra grande
       '8xl': '10vw', 
     },
