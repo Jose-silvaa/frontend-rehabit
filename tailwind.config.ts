@@ -25,6 +25,7 @@ export default {
     extend: {
       colors : {
         'landing' : "#0a0e31",
+        'MainPage' : "#f7f8fd",
         'FontColor' : '#b9b2ff',
         'ColorSmalText' : '#818596',
         'ButtonColor' : '#8B7FFF',

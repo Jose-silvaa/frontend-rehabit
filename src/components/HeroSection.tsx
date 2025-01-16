@@ -1,12 +1,12 @@
 import Link from "next/link";
+import Phrases from "./Phrases";
 
 const HeroSection = () => {
 
     return (
       <section className="h-screen flex flex-col items-center justify-center px-4 ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-          <h1 className="text-5xl font-bold tracking-tight text-landing sm:text-6xl">Create and Sustain Positive Habits</h1>
-          <p className="mt-6 text-lg leading-8 text-600 max-w-2xl mx-auto">Track and build personalized habits for lasting transformation.</p>
+          <Phrases title="Create and Sustain Positive Habits" subtitle="Rehabit helps you track and build personalized habits for lasting transformation."></Phrases>
           <nav className="flex flex-col md:flex-row gap-4 mt-6 justify-center">
             <Link href="/login">
                 <button className="bg-landing text-white px-4 py-2 rounded w-full md:w-64">
