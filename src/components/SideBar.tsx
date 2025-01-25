@@ -22,7 +22,7 @@ export function Sidebar({isVisible } : SidebarProps) {
           </Button>
         </nav>
         <Button variant="ghost" className="w-full justify-start mt-auto">
-          <LogOut className="mr-2 h-4 w-4" /> Logout
+          <LogOut className="mr-2 h-4 w-4" /> Log out
         </Button>
       </aside> 
     </>
