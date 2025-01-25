@@ -21,6 +21,7 @@ export default {
       '6xl': '3.75rem',   // 6x Extra grande
       '7xl': '9vw',   // 7x Extra grande
       '8xl': '10vw', 
+      
     },
     extend: {
       colors : {
@@ -32,7 +33,8 @@ export default {
         'FontColorAuth' : '#E9F6FF',
         'Warning' : '#C1EDD5',
         'FormMessage' : '#A6ADBA',
-        'LinkColor' : '#1F276F'
+        'LinkColor' : '#1F276F',
+        'SideBarMenu': '#f4f4f5'
       }
     },
   },

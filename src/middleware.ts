@@ -4,7 +4,7 @@ import { decrypt } from "./authentication/session";
 
 
   //Check if route is protected 
-  const protectedRoutes = ['/dashboard', '/dashboard/habit']
+  const protectedRoutes = ['/dashboard']
   const publicRoutes = ['/login', '/signup', '/']
 
 export default async function middleware(req: NextRequest) {
