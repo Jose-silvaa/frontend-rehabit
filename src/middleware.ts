@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-
 import { decrypt } from "./authentication/session";
 
 
   //Check if route is protected 
-  const protectedRoutes = ['/dashboard']
+  const protectedRoutes = ['/dashboard/*']
   const publicRoutes = ['/login', '/signup', '/']
 
 export default async function middleware(req: NextRequest) {
@@ -17,14 +16,10 @@ export default async function middleware(req: NextRequest) {
     const session = await decrypt(cookie);
 
     if(isProtectedRoute && !session?.userId){
-        return NextResponse.redirect(new URL('/login', req.nextUrl))       
+        return NextResponse.redirect(new URL('/signup', req.nextUrl))       
     }
 
-    if (
-        isPublicRoute &&
-        session?.userId &&
-        !req.nextUrl.pathname.startsWith('/dashboard')
-      ) {
+    if ( isPublicRoute && session?.userId && !req.nextUrl.pathname.startsWith('/dashboard')) {
         return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
       }
      
@@ -33,7 +28,5 @@ export default async function middleware(req: NextRequest) {
 
 
 export const config = {
-  matcher: [
-      '/dashboard/habit', // Exclui a rota /signup
-  ],
-};
+  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
+}

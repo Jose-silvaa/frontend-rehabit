@@ -4,8 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from 'next/navigation';
 
 
-
-let key = new TextEncoder().encode(process.env.SECRET)
+let key = new TextEncoder().encode(process.env.SESSION_SECRET)
 
 const cookie = {
     name : 'session',
@@ -29,7 +28,7 @@ export async function decrypt(session: any) {
 
         return payload
     } catch (error) {
-        return null;
+        console.log('Failed to verify session')
     }
 }
 
@@ -46,12 +45,6 @@ export async function createSession(userId: string){
     } catch (error) {
         console.error("Error during session creation:", error);
     } 
-        // if (session) {
-        //     redirect('/dashboard'); //Erro aqui, I can't use redirect 
-        // } else {
-        //     redirect('/login');  
-        // }
-    
 }
 
 export async function verifySession(){
