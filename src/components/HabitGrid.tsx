@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Button } from "@/components/ui/button"
-import { format } from "date-fns"
+
 
 // Mock data for habits with days of the week
 const habits = [

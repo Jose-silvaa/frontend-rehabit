@@ -42,7 +42,7 @@ export async function signup(state : FormState, formData : FormData): Promise<Si
         }
         
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-        const response = await fetch("https://127.0.0.1:3333/users", {
+        const response = await fetch("http://127.0.0.1:3333/users", {
             method : 'POST',
             headers : {
                 'Content-Type' : 'application/json',

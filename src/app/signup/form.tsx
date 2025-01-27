@@ -8,10 +8,6 @@ export default function SignupForm (){
 
     const [state, action, IsPending] = useActionState(signup, undefined)
 
-    if(state?.success == true){
-      window.location.href = state.redirectTo || "/dashboard"
-    }
-
     return (
         <form action={action}>
           <section className="flex flex-col py-1">
