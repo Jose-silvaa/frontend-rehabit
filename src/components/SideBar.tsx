@@ -19,7 +19,7 @@ export function Sidebar({isVisible } : SidebarProps) {
   const logoutUser = async () =>{
     try {
       const response = await fetch("/api/logout",{
-        method : 'GET'
+        method : 'POST'
       })
 
       if(!response.ok){

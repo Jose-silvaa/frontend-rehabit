@@ -28,7 +28,7 @@ export async function decrypt(session: any) {
 
         return payload
     } catch (error) {
-        console.log('Failed to verify session')
+        console.error('Failed to verify session')
     }
 }
 
@@ -68,15 +68,6 @@ export async function verifySession(){
         redirect('/login');
     }
 
-
     return { userId }
-
-}
-
-export async function deleteSession(){
-
-    (await cookies()).delete(cookie.name)
-    
-    redirect('/login')
 }
 

@@ -1,10 +1,8 @@
-import { deleteSession } from '@/authentication/session';
+import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
 
-export async function GET(request : Request) {  
-    deleteSession();
-
-    return new Response(JSON.stringify({ message: "Logout realizado com sucesso!" }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-    });
+export async function POST(request : Request) {  
+   
+    (await cookies()).delete("session");
+    return NextResponse.json({ message: "Session deleted" }, { status: 200 });
 }
