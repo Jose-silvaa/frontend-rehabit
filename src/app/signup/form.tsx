@@ -3,18 +3,29 @@
 import { signup } from "../../authentication/actions" 
 import { useActionState } from "react"
 
-export default function SignupForm (){
+type FormProps = {
+  showName?: boolean
+  showEmail?: boolean
+  showPassword?: boolean
+  buttonText? : string
 
-    const [state, action, IsPending] = useActionState(signup, undefined)
+
+}
+
+export default function FormGeneric({showName = true, showEmail = true, showPassword = true, buttonText = "SIGN UP"} : FormProps){
+
+    const [state, action , IsPending] = useActionState(signup, undefined)
 
     return (
         <form action={action}>
-          <section className="flex flex-col py-1">
+          {showName && (
+            <section className="flex flex-col py-1">
             <label className="label" htmlFor="name">
               <span className="text-FontColorAuth">Name</span>
             </label>
             <input className="form-control w-full input input-bordered" name="name" />
            </section>
+          )}  
            {state?.errors?.name && <p className="text-red-500">{state.errors.name}</p>}
            <section className="flex flex-col py-1">
               <label className="label" htmlFor="email">
@@ -41,7 +52,7 @@ export default function SignupForm (){
             </div>
             )}
             <div className="form-group">
-                <button disabled={IsPending} type="submit" className="btn btn-block">{IsPending ? "Submitting..." : "Sign up"}</button>
+                <button disabled={IsPending} type="submit" className="btn btn-block">{IsPending ? "Submitting..." : buttonText}</button>
             </div>
         </form>
     )
