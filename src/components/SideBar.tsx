@@ -30,7 +30,7 @@ export function Sidebar({isVisible } : SidebarProps) {
 
       const data = await response.json();
 
-      router.push('/signup');
+      router.push('/login');
   
     } catch (error : any) {
       console.error(error.message || "Erro ao buscar os dados do usuário.");

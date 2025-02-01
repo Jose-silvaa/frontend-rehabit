@@ -1,5 +1,6 @@
 import Link from "next/link"
 import FormGeneric from "../signup/form"
+import { login } from "../../authentication/actions"
 
 
 export default function Login (){
@@ -22,7 +23,7 @@ export default function Login (){
               <div className="py-4 divider">
                 <span className="text-FontColorAuth">OR</span>
               </div>
-            <FormGeneric showName={false} buttonText={"SIGN IN"}/>
+            <FormGeneric onSubmit={login} showName={false} buttonText={"SIGN IN"}/>
           </div>
           <div className="text-FontColorAuth font-medium text-center pb-3">
             No account? Get started here.

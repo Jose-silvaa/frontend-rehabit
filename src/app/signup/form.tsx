@@ -1,6 +1,5 @@
 "use client"
 
-import { signup } from "../../authentication/actions" 
 import { useActionState } from "react"
 
 type FormProps = {
@@ -8,13 +7,12 @@ type FormProps = {
   showEmail?: boolean
   showPassword?: boolean
   buttonText? : string
-
-
+  onSubmit: (state : any, formData: any) => Promise<any>;
 }
 
-export default function FormGeneric({showName = true, showEmail = true, showPassword = true, buttonText = "SIGN UP"} : FormProps){
+export default function FormGeneric({showName = true, showEmail = true, showPassword = true, buttonText = "SIGN UP", onSubmit} : FormProps){
 
-    const [state, action , IsPending] = useActionState(signup, undefined)
+    const [state, action , IsPending] = useActionState(onSubmit, undefined)
 
     return (
         <form action={action}>

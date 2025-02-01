@@ -28,7 +28,8 @@ export async function decrypt(session: any) {
 
         return payload
     } catch (error) {
-        console.error('Failed to verify session')
+        // console.error('Failed to verify session', error)
+        return null;
     }
 }
 
