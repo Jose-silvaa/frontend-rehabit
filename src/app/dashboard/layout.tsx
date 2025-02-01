@@ -27,7 +27,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("/api/user");
+        const response = await fetch("/api/user", {
+          method : 'GET',
+          headers : {
+            'Content-Type' : 'application/json',
+        },
+        });
 
         if (!response.ok) {
           const errorData = await response.json();
@@ -37,13 +42,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
         const data = await response.json();
 
-        if (data && data.name) {
+        if (data || data.email) {
           setUserData(data); 
         } else {
           console.error("Dados do usuário inválidos ou ausentes.");
         }
       } catch (error : any) {
-        console.error(error.message || "Erro ao buscar os dados do usuário.");
+        // console.error(error.message || "Erro ao buscar os dados do usuário.");
       }
     };
 

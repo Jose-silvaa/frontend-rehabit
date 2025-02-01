@@ -19,7 +19,7 @@ export function Sidebar({isVisible } : SidebarProps) {
   const logoutUser = async () =>{
     try {
       const response = await fetch("/api/logout",{
-        method : 'GET'
+        method : 'POST'
       })
 
       if(!response.ok){
@@ -30,7 +30,7 @@ export function Sidebar({isVisible } : SidebarProps) {
 
       const data = await response.json();
 
-      router.push('/signup');
+      router.push('/login');
   
     } catch (error : any) {
       console.error(error.message || "Erro ao buscar os dados do usuário.");
