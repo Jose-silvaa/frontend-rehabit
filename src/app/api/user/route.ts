@@ -44,6 +44,7 @@ export async function GET(request : Request){
 
 function userDTO(user : any){
     return {
+        id : user.id,
         name : user.name,
         email : user.email
     }
