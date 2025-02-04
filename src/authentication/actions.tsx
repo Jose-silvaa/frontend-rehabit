@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { FormState, LoginFormSchema, SignupFormSchema } from "../certificates/zod/signupValidations"
 import { createSession } from "./session";
+import { da } from "date-fns/locale";
 
 
 interface SignupResponse {
@@ -99,7 +100,6 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
         email : formData.get('email'),
         password : formData.get('password')
     })
-    
 
     const ValidationResult = LoginFormSchema.safeParse(parsedData);
 

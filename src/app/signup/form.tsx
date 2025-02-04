@@ -50,7 +50,13 @@ export default function FormGeneric({showName = true, showEmail = true, showPass
             </div>
             )}
             <div className="form-group">
-                <button disabled={IsPending} type="submit" className="btn btn-block">{IsPending ? "Submitting..." : buttonText}</button>
+                <button disabled={IsPending} type="submit" className="btn btn-block flex items-center justify-center gap-2">
+                  {IsPending ? (
+                    <div className="spinner-border animate-spin border-4 border-t-4 border-white w-6 h-6 rounded-full"></div>
+                  ) : (
+                    buttonText
+                  )}
+              </button>
             </div>
         </form>
     )

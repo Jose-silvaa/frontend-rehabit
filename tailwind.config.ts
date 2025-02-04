@@ -34,6 +34,7 @@ export default {
         'Warning' : '#C1EDD5',
         'FormMessage' : '#A6ADBA',
         'LinkColor' : '#1F276F',
+        'CardMenu': '#f1f5f9',
         'SideBarMenu': '#f4f4f5'
       }
     },
