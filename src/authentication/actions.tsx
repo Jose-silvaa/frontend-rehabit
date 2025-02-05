@@ -1,9 +1,8 @@
 "use server"
 
-import { redirect } from "next/navigation";
 import { FormState, LoginFormSchema, SignupFormSchema } from "../certificates/zod/signupValidations"
 import { createSession } from "./session";
-import { da } from "date-fns/locale";
+
 
 
 interface SignupResponse {
@@ -36,7 +35,7 @@ export async function signup(state : FormState, formData : FormData): Promise<Si
     if(!ValidationResult.success){
         return {
             success : false,
-            message: "Validation failed",
+            message: "Something went wrong. Please try again",
             errors : ValidationResult.error.flatten().fieldErrors,
 
         }
@@ -70,7 +69,14 @@ export async function signup(state : FormState, formData : FormData): Promise<Si
 
         const data = await response.json();
 
-        await createSession(data.id)
+        const sessionCreated = await createSession(data.id)
+
+        if(!sessionCreated){
+            return {
+                success : false,
+                message : "Failed to created session"
+            }
+        }
 
         return {
             success: true,
@@ -87,8 +93,6 @@ export async function signup(state : FormState, formData : FormData): Promise<Si
             success: false,
             message: "An unexpected error occurred while processing the request.",
         };
-    }finally{
-        redirect("/dashboard")
     }
 
 }
@@ -106,8 +110,7 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
     if(!ValidationResult.success){
         return {
             success : false,
-            message: "Validation failed",
-            errors : ValidationResult.error.flatten().fieldErrors,
+            message: "Something went wrong. Please try again",
 
         }
     }
@@ -140,7 +143,14 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
         
         const data = await response.json();
 
-        await createSession(data.id)
+        const sessionCreated = await createSession(data.id)
+
+        if(!sessionCreated){
+            return {
+                success : false,
+                message : "Failed to created session"
+            }
+        }
 
         return {
             success: true,
@@ -156,7 +166,5 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
             success: false,
             message: "An unexpected error occurred while processing the request.",
         };
-    }finally{
-        redirect("/dashboard")
     }
 }
