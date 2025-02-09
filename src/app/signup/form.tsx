@@ -1,6 +1,7 @@
 "use client"
 
-import { useActionState } from "react"
+import { useRouter } from "next/navigation"
+import { useActionState, useEffect, useState } from "react"
 
 type FormProps = {
   showName?: boolean
@@ -13,6 +14,28 @@ type FormProps = {
 export default function FormGeneric({showName = true, showEmail = true, showPassword = true, buttonText = "SIGN UP", onSubmit} : FormProps){
 
     const [state, action , IsPending] = useActionState(onSubmit, undefined)
+    const [loginMessage, setLoginMessage] = useState("");
+    const router = useRouter();
+
+
+    useEffect(() => {
+      if (state && state.success && state.redirectTo) {
+        router.push(state.redirectTo);
+      }
+
+      if(state && state.success == false){
+            setLoginMessage(state.message)
+
+            const timer = setTimeout(()=>{
+              setLoginMessage("")
+            }, 5000)
+
+            return () => clearTimeout(timer);
+        }
+
+        
+    }, [state]);
+
 
     return (
         <form action={action}>
@@ -57,7 +80,9 @@ export default function FormGeneric({showName = true, showEmail = true, showPass
                     buttonText
                   )}
               </button>
+              <p className="text-red-500 mt-5">{`${loginMessage}`}</p>
             </div>
+       
         </form>
     )
 }

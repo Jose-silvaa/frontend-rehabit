@@ -43,6 +43,8 @@ export async function createSession(userId: string){
         const cookieStore = await cookies();
         cookieStore.set(cookie.name, session, { ...cookie.options, expires });
 
+        return true;
+
     } catch (error) {
         console.error("Error during session creation:", error);
     } 
