@@ -28,20 +28,17 @@ const CheckboxGroup = () => {
   };
 
   return (
-    <div className="form-group">
-      <label className="text-FontColorAuth" htmlFor="days">
-        <span className="flex justify-start mb-5 text-base">Repeat</span>
-      </label>
-      <section className='flex justify-between flex-row gap-full'>
+    <div className="form-group w-[75%] mb-5">
+      <section className='flex justify-between flex-row'>
         {state.checkboxes.map((checked:any, index:any) => (
-        <div key={index} className='flex flex-col mb-12'>
+        <div key={index} className='flex flex-col'>
             <input
                 className="checkbox mb-2"
                 type="checkbox"
                 checked={checked}
                 onChange={() => handleChange(index)}
             />
-            <label className='text-center text-Warning text-base'>{state.labels[index]}</label> 
+            <label className='text-center text-bold text-base'>{state.labels[index]}</label> 
         </div>
         ))}
       </section>

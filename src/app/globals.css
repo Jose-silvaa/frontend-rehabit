@@ -4350,7 +4350,6 @@ progress::-webkit-progress-value {
 
 .checkbox:checked, .checkbox[checked=true] {
     --tw-bg-opacity: 1;
-    background-color: hsl(var(--bc) / var(--tw-bg-opacity));
     background-repeat: no-repeat;
     animation: checkmark var(--animation-input, .2s) ease-in-out;
     background-image: linear-gradient(-45deg, transparent 65%, hsl(var(--chkbg)) 65.99%), linear-gradient(45deg, transparent 75%, hsl(var(--chkbg)) 75.99%), linear-gradient(-45deg, hsl(var(--chkbg)) 40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
@@ -4358,8 +4357,8 @@ progress::-webkit-progress-value {
 
 .checkbox {
     flex-shrink: 0;
-    --chkbg: var(--bc);
-    --chkfg: var(--b1);
+ --chkbg: 145, 63%, 42%;
+  --chkfg: 0, 0%, 100%;   /* Branco */
     height: 1.5rem;
     width: 1.5rem;
     cursor: pointer;
@@ -4379,3 +4378,21 @@ progress::-webkit-progress-value {
     gap: .5rem;
 }
 
+
+/* Animação de slide-in de baixo */
+.slide-in {
+    animation: slideInFromBottom 0.5s ease-out; /* 0.5s para a animação */
+    
+  }
+  
+  /* Keyframes para o efeito de slide-in de baixo */
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(20px); /* Começa com a div abaixo */
+      opacity: 0; /* Começa invisível */
+    }
+    100% {
+      transform: translateY(0); /* A div vai até a posição normal */
+      opacity: 1; /* Fica totalmente visível */
+    }
+  }
