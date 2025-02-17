@@ -107,7 +107,7 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
 
     const ValidationResult = LoginFormSchema.safeParse(parsedData);
 
-    if(!ValidationResult.success){
+    if(!ValidationResult.success){  
         return {
             success : false,
             message: "Something went wrong. Please try again",
