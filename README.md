@@ -13,4 +13,27 @@
 - Tailwind CSS
 - Fetch API (for backend communication)
 
+## 📦 Installation
 
+```sh
+# Clone the repository
+git clone https://github.com/Jose-silvaa/frontend-rehabit.git
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
+
+```
+
+## 🌍 Live Demo  
+🚧 The frontend is not deployed yet. Stay tuned! 🚧  
+
+<!-- 
+## 🌍 Live Demo  
+The frontend is deployed and available at:  
+
+🔗 [Frontend URL](https://frontend-rehabit.example.com)  
+
+-->
