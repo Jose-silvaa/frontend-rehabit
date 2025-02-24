@@ -10,7 +10,7 @@ export async function GET(request : Request){
 
     //2. Fetch user data
     try {
-        const response = await fetch(`http://127.0.0.1:3333/users/${session.userId}`, {
+        const response = await fetch(`https://server-habit.onrender.com/users/${session.userId}`, {
             method : 'GET',
             headers : {
                 'Content-Type' : 'application/json',

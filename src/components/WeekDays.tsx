@@ -28,7 +28,7 @@ const CheckboxGroup = ({ onChange }: { onChange: (selectedDays: number[]) => voi
     // Obtendo os dias selecionados como NÚMEROS (0 = Domingo, ..., 6 = Sábado)
     const selectedDays = state.checkboxes
       .map((checked: boolean, i: number) => (i === index ? !checked : checked) ? i : null) // 🔹 Pegamos o índice como valor numérico
-      .filter((day : number): day is number => day !== null); // 🔹 Remove valores nulos
+      .filter((day: number): day is number => day !== null); // 🔹 Remove valores nulos
 
     onChange(selectedDays);
   };
