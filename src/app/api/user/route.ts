@@ -20,10 +20,10 @@ export async function GET(request : Request){
         if(!response.ok){
             const errorData = await response.json();
             
-            return {
-                success : false,
-                message : errorData.message || "An error occurred while creating the account."
-            }
+            return NextResponse.json({
+                success: false,
+                message: errorData.message || "An error occurred while fetching user data."
+            }, { status: response.status });
         }
 
         const data = await response.json();
@@ -43,9 +43,9 @@ export async function GET(request : Request){
 
 
 function userDTO(user : any){
-    return {
+    return NextResponse.json({ 
         id : user.id,
         name : user.name,
         email : user.email
-    }
+    })
 }
