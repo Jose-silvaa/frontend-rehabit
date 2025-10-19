@@ -62,7 +62,6 @@ export function HabitGrid({ day }: { day: string }) {
         console.error("Erro ao atualizar o hábito");
       }
 
-      console.log(response)
     } catch (error: any) {
       console.error("Erro na requisição", error.message);
     }

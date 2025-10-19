@@ -86,7 +86,6 @@ const habit = () =>{
               }
         
               const data = await response.json();
-              console.log("Hábito criado:", data);
 
               setCreateHabit({
                 name: "",

@@ -121,7 +121,6 @@ export async function login(state : FormState, formData : FormData) : Promise<Lo
             password : parsedData.password,
         }
         
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
         const response = await fetch("https://server-habit.onrender.com/login", {
             method : 'POST',
             headers : {
