@@ -25,15 +25,10 @@ npm install
 # Run the project
 npm run dev
 
-```
-
-## 🌍 Live Demo  
-🚧 The frontend is not deployed yet. Stay tuned! 🚧  
-
-<!-- 
+``` 
 ## 🌍 Live Demo  
 The frontend is deployed and available at:  
 
-🔗 [Frontend URL](https://frontend-rehabit.example.com)  
+🔗 [Frontend URL](https://frontend-rehabit.vercel.app)  
 
--->
+
